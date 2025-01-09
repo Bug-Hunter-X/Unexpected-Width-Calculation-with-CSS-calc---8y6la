@@ -1,0 +1,11 @@
+The following CSS rule causes unexpected behavior in some browsers:
+
+```css
+div {
+  width: calc(100% - 20px);
+}
+```
+
+This `calc()` function is supposed to calculate the width of the div as 20px less than 100% of its container. However, some older browsers may misinterpret this calculation, resulting in incorrect rendering or layout issues.  The problem might stem from how the browser handles the subtraction within the `calc()` function, particularly when dealing with percentages and pixel values.
+
+This is often exacerbated if the container's width itself is calculated dynamically, or if nested `calc()` functions are involved.
